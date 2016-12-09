@@ -68,7 +68,7 @@ public class PointerController : MonoBehaviour {
             Destroy(currentSpellAtLoc.gameObject);
         }
 
-        GameObject spellInstance = Instantiate(spellToCreate, SpawnLocs[currentLoc].transform.position, SpawnLocs[currentLoc].transform.rotation) as GameObject;
+        GameObject spellInstance = Instantiate(spellToCreate, SpawnLocs[currentLoc].transform.position, Quaternion.identity) as GameObject;
         spellInstance.transform.parent = SpawnLocs[currentLoc].transform;
     }   
 

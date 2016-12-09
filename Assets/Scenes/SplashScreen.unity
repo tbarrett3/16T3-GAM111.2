@@ -692,7 +692,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1764775939}
   - 82: {fileID: 1764775938}
-  - 114: {fileID: 1764775941}
   - 114: {fileID: 1764775940}
   m_Layer: 0
   m_Name: BackgroundMusic1
@@ -797,16 +796,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 291a7e33305f65c44ac4acdfa64aa323, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1764775941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1764775937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33326b7d00f028442ae6a8b73caa80c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
