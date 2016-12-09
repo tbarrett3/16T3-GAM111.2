@@ -4,6 +4,27 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public string sceneName;
+
+    void Start()
+    {
+        sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "SplashScreen")
+        {
+            StartCoroutine (SplashCount());
+        }
+    }
+
+        IEnumerator SplashCount()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene("MainMenu");
+            print("splash count");
+        }
+    }
 
     public void RestartScene()
     {

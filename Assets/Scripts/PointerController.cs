@@ -15,6 +15,9 @@ public class PointerController : MonoBehaviour {
 
     public GameObject fireSpellPrefab, waterSpellPrefab, forestSpellPrefab;
 
+    public KeyCode shootSpell;
+    public GameObject[] LaneLocs;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -49,6 +52,11 @@ public class PointerController : MonoBehaviour {
         {
             SpawnItem(forestSpellPrefab);
         }
+
+        if (Input.GetKeyDown(shootSpell))
+        {
+            SendSpell();
+        }
     }
 
     public void SpawnItem(GameObject spellToCreate)
@@ -63,4 +71,20 @@ public class PointerController : MonoBehaviour {
         GameObject spellInstance = Instantiate(spellToCreate, SpawnLocs[currentLoc].transform.position, SpawnLocs[currentLoc].transform.rotation) as GameObject;
         spellInstance.transform.parent = SpawnLocs[currentLoc].transform;
     }   
+
+    public void SendSpell()
+    {
+        var currentSpellAtLoc = SpawnLocs[currentLoc].transform.childCount > 0 ? SpawnLocs[currentLoc].transform.GetChild(0) : null;
+
+        if (currentSpellAtLoc != null)
+        {
+            GameObject spellToSend = SpawnLocs[currentLoc].transform.GetChild(0).gameObject;
+            spellToSend.transform.parent = null;
+            spellToSend.transform.position = LaneLocs[currentLoc].transform.position;
+        }
+        else
+        {
+            print("no spell");
+        }
+    }
 }
